@@ -18,6 +18,6 @@ app.use('/posts', postsRouter)
 app.use('/subreddits', subredditsRouter)
 app.use('/comments', commentsRouter)
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 6000, () => {
     console.log(`App is listening on port ${port}`)
 })
