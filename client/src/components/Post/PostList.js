@@ -14,7 +14,7 @@ const PostList = ({isLoading, error, postList, getPostList}) => {
     }, [getPostList, subreddit]);
 
     if (isLoading) {
-        return (<Flex m={10} justifyContent="center" alignItems="center"><CircularProgress isIndeterminate/></Flex>);
+        return (<Flex m={5} justifyContent="center" alignItems="center"><CircularProgress isIndeterminate/></Flex>);
     } else if (error) {
         return (<Alert status="error"><AlertIcon/>{error}</Alert>);
     }

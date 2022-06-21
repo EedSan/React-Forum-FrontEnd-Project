@@ -31,14 +31,13 @@ const NavigationBar = ({user, subreddits, isLoading, error, startLogout, getSubr
         getSubreddits()
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    return (<ThemedBox py={2} px={[0, 0, 10, 10]} display="flex" justifyContent="flex-start" alignItems="center" mb={7}>
+    return (<ThemedBox py={1} px={[0, 0, 10, 10]} display="flex" justifyContent="flex-start" alignItems="center" mb={5}>
         <Heading ml={[2, 4]} display={user ? 'block' : ['none', 'block']}
-                 fontSize={['1.3rem', '2.25rem']}></Heading>
-        <HStack spacing={5}>
-            <Button as={Link} to="/" size='md' variant='link'>Forum</Button>
+                 fontSize={['1.5rem', '2.5rem']}></Heading>
+        <HStack spacing={3}>
+            <Button as={Link} to="/" size='md' variantColor="blue" variant='outline'>Forum</Button>
             <Menu>
-                <MenuButton mx={2} as={Button}
-                            rightIcon={<ChevronDownIcon/>}>{subredditName || 'Communities'}</MenuButton>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>{subredditName || 'Communities'}</MenuButton>
                 <MenuList>
                     <MenuItem as={Link} to="/">Home</MenuItem>
                     <MenuDivider/>

@@ -5,7 +5,7 @@ import {Alert, AlertIcon, Box, Button, FormControl, FormErrorMessage, Input, Sta
 import {createLoadingAndErrorSelector} from '../selector/selectors';
 import {createSubreddit} from '../CRUD-actions/subreddits';
 
-class SubredditPage extends React.Component {
+class CreateSubredditPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {name: '', description: '',};
@@ -30,7 +30,7 @@ class SubredditPage extends React.Component {
     render() {
         const {name, description} = this.state;
         const {isLoading, error} = this.props;
-        return (<Box w={['100%', '90%', '80%', '70%']} m="auto">
+        return (<Box w={['100%', '100%', '100%', '68%']} m="auto">
             {error && (<Alert status="error" mb={4}><AlertIcon/>{error}</Alert>)}
             <form onSubmit={this.handleSubmit}>
                 <Stack>
@@ -61,4 +61,4 @@ const mapDispatchToProps = (dispatch) => ({
     createSubreddit: (name, description) => dispatch(createSubreddit(name, description)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SubredditPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateSubredditPage));

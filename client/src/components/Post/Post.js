@@ -14,13 +14,13 @@ const Post = ({id, type, subreddit, author, createdAt, title, body, numComments,
     const isTextPost = type === 'text';
     const [isEditing, setIsEditing] = useState(false);
     const deletedText = '[deleted]';
-    return (<ThemedBox p={4} borderRadius="md" width="100%" light="gray.400">
+    return (<ThemedBox p={4} borderRadius="md" width="100%" light="gray.300">
             <Flex>
                 <Box flexGrow={1}>
-                    <Text as={Link} to={`/r/${subreddit}`} fontWeight="bold">{`r/${subreddit}`}</Text>{' '}
-                    <Text as="span" color={postDetailColor}>{`Posted by `}</Text>
-                    <Text as="span">{author ? `u/${author}` : deletedText}</Text>
-                    <Text as="span" color={postDetailColor}>{' '}
+                    <Text as={Link} to={`/r/${subreddit}`} fontWeight="bold">{`r/${subreddit} `}</Text>
+                    <Text as="span" color={postDetailColor}>{` Posted by `}</Text>
+                    <Text as="span">{author ? `u/${author} ` : deletedText}</Text>
+                    <Text as="span" color={postDetailColor}>
                         <Tooltip label={moment(createdAt).format('LLLL')}>{moment(createdAt).fromNow()}</Tooltip>
                     </Text>
                     <Heading as={isTextPost ? Link : 'a'} display="block"

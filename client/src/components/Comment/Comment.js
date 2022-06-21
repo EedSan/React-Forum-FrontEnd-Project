@@ -11,13 +11,13 @@ import DeleteButton from '../DeleteButton';
 import {userSelector} from '../../selector/selectors';
 
 const Comment = ({id, body, postId, createdAt, author, user,}) => {
-    const commentDetailColor = 'gray.100';
+    const commentDetailColor = 'gray.500';
     const [showWriteReply, setShowWriteReply] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const history = useHistory();
     const location = useLocation();
     const deletedText = '[deleted]';
-    return (<ThemedBox p={4} borderRadius="md" width="100%" light="gray.400">
+    return (<ThemedBox p={4} borderRadius="md" width="100%" light="gray.300">
         <Flex>
             <Box flexGrow={1}>
                 <Text as="span" isTruncated>

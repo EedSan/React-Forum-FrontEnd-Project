@@ -39,7 +39,7 @@ class WriteCommentBox extends React.Component {
                     </FormControl>
                     <HStack>
                         <Button isDisabled={!body} isLoading={isLoading} type="submit"
-                                size='md' height='48px' width='200px' border='2px'
+                                size='md' height='48px' width='150px' border='2px'
                                 borderColor='green.500'>{type}</Button>
                         {isReply && onClose && <Button onClick={onClose}>cancel</Button>}
                     </HStack>

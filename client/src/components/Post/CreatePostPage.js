@@ -8,7 +8,7 @@ import {createLoadingAndErrorSelector, subredditsSelector,} from '../../selector
 import {getSubreddits} from '../../CRUD-actions/subreddits';
 import {submitPost} from '../../CRUD-actions/post';
 
-class PostPage extends React.Component {
+class CreatePostPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {postType: 'text', title: '', body: '', subreddit: '',};
@@ -33,7 +33,7 @@ class PostPage extends React.Component {
     render() {
         const {title, body, subreddit} = this.state;
         const {srIsLoading, srError, submitIsLoading, submitError, subreddits,} = this.props;
-        return (<Box w={['100%', '90%', '80%', '70%']} m="auto">
+        return (<Box w={['100%', '100%', '100%', '68%']} m="auto">
             {submitError && (<Alert status="error" mb={4}><AlertIcon/>{submitError}</Alert>)}
             <form onSubmit={this.handleSubmit}>
                 <Stack spacing={3}>
@@ -53,10 +53,10 @@ class PostPage extends React.Component {
                         </Select>
                         <FormErrorMessage>Could not load subreddits</FormErrorMessage>
                     </FormControl>
-                    <Button size='md' height='48px' width='200px' border='2px'
+                    <Button size='md' height='50px' width='300px' border='2px'
                             borderColor='green.500' type="submit"
                             isLoading={srIsLoading || submitIsLoading || null}>
-                        Submit
+                        Publish
                     </Button>
                 </Stack>
             </form>
@@ -84,4 +84,4 @@ const mapDispatchToProps = (dispatch) => ({
     getSubreddits: () => dispatch(getSubreddits()), submitPost: (postDetails) => dispatch(submitPost(postDetails)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreatePostPage));

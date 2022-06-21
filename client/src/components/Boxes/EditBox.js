@@ -36,13 +36,13 @@ const EditBox = ({type = 'post', id, initialText, onClose, error, startEditPost,
 
     return (<Box>
             <form onSubmit={handleSubmit}>
-                <FormControl mb={3} isInvalid={!!error}>
+                <FormControl mb={2} isInvalid={!!error}>
                     <Textarea value={value} onChange={(e) => setValue(e.target.value)} rows={5}/>
                     <FormErrorMessage>{error}</FormErrorMessage>
                 </FormControl>
                 <HStack>
                     <Button isDisabled={value === initialText} isLoading={isLoading}
-                            size='md' border='2px' borderColor='green.500' type="submit">
+                            size='md' height='42px' width='100px' border='2px' borderColor='green.500' type="submit">
                         save
                     </Button>
                     <Button onClick={onClose}>cancel</Button>

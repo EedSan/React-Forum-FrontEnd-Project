@@ -7,10 +7,10 @@ import NavigationBar from './components/NavigationBar';
 import CommentsPage from './components/Comment/CommentsPage';
 import LoginPage from './components/LoginAndRegister/LoginPage';
 import RegisterPage from './components/LoginAndRegister/RegisterPage';
-import CreatePostPage from './components/Post/PostPage';
+import CreatePostPage from './components/Post/CreatePostPage';
 import PostList from './components/Post/PostList';
 import ThemedBox from './components/Boxes/ThemedBox';
-import CreateSubredditPage from './components/SubredditPage';
+import CreateSubredditPage from './components/CreateSubredditPage';
 
 function App() {
     return (<ChakraProvider>
