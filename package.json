@@ -1,0 +1,13 @@
+{
+  "name": "react-forum-frontend-project",
+  "version": "1.0.0",
+  "author": "SAzonenko Eugene",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/index.js",
+    "client": "npm run client/src/index.js",
+    "dev": "concorrently \"npm run server\" \"npm run client\""
+  }
+}
